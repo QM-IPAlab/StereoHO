@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="human-robot interaction, handover, hand-object reconstruction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Stereo Hand-Object Reconstruction for Human-to-Robot Handover</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Stereo Hand-Object Reconstruction for Human-to-Robot Handover</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=xPEdLeoAAAAJ&hl=en" target="_blank">Yik Lung Pang</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  <a href="https://kerolex.github.io/" target="_blank">Alessio Xompero</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                    <a href="http://eecs.qmul.ac.uk/~coh/" target="_blank">Changjae Oh</a><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://people.epfl.ch/andrea.cavallaro/?lang=en" target="_blank">Andrea Cavallaro</a><sup>2,3</sup>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">Queen Mary, University of London<sup>1</sup><br>
+                      Idiap Research Institute<sup>2</sup>, École Polytechnique Fédérale de Lausanne<sup>3</sup></span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <!-- <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span> -->
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/QM-IPAlab/StereoHO" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Comming soon)</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%" width="33%">
+        <source src="static/videos/intro_ex1.mp4" type="video/mp4">
+      </video>
+      <video poster="" id="tree" autoplay controls muted loop height="100%" width="33%">
+        <source src="static/videos/intro_ex2.mp4" type="video/mp4">
+      </video>
+      <video poster="" id="tree" autoplay controls muted loop height="100%" width="33%">
+        <source src="static/videos/intro_ex3.mp4" type="video/mp4">
+      </video>
+      <br>
+      <video poster="" id="tree" autoplay controls muted loop height="100%" width="33%">
+        <source src="static/videos/intro_ex4.mp4" type="video/mp4">
+      </video>
+      <video poster="" id="tree" autoplay controls muted loop height="100%" width="33%">
+        <source src="static/videos/intro_ex5.mp4" type="video/mp4">
+      </video>
+      <video poster="" id="tree" autoplay controls muted loop height="100%" width="33%">
+        <source src="static/videos/intro_ex6.mp4" type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        We propose StereoHO, a hand-object reconstruction method for wide baseline stereo cameras, which enables a robot to receive general household objects from humans.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Jointly estimating hand and object shape ensures the success of the robot grasp in human-to-robot handovers. However, relying on hand-crafted prior knowledge about the geometric structure of the object fails when generalising to unseen objects, and depth sensors fail to detect transparent objects such as drinking glasses. In this work, we propose a stereo-based method for hand-object reconstruction that combines single-view reconstructions probabilistically to form a coherent stereo reconstruction. We learn 3D shape priors from a large synthetic hand-object dataset to ensure that our method is generalisable, and use RGB inputs instead of depth as RGB can better capture transparent objects. We show that our method achieves a lower object Chamfer distance compared to existing RGB based hand-object reconstruction methods on single view and stereo settings. We process the reconstructed hand-object shape with a projection-based outlier removal step and use the output to guide a human-to-robot handover pipeline with wide-baseline stereo RGB cameras. Our hand-object reconstruction enables a robot to successfully receive a diverse range of household objects from the human.
+          </p>
+        </div>
+      <div>
+      <img src="static/images/comparison.jpg" alt="" width="70%" class="center-image"/>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="section is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Human-to-robot handover setup</h2>
+          <div class="level-set has-text-justified">
+            <p>
+              We reconstruct the hand-object pointcloud from stereo RGB input for human-to-robot handover. (1) A safe grasp is selected for the handover and the robot moves in to grasp the object. (2) The object is delivered to a target location on the table. (3) The robot returns to its starting position.
+            </p>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <img src="static/images/setup.jpg" alt="Robot setup" width="60%" class="center-image"/>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="hero section is-small is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Stereo hand object reconstruction</h2>
+          <div class="level-set has-text-justified">
+            <p>
+              Our proposed hand-object reconstruction method with two cropped images from a wide-baseline stereo camera. StereoHO first performs shape estimation from each view independently to obtain the predicted probability distributions over the shape codebooks. The stereo-based probability distribution is computed by element-wise multiplication. The trained SDF decoder transforms the stereo prediction into the hand-object TSDF. Surface points, sampled as a pointcloud from the TSDF, are projected into each view using the predicted camera projection parameters. We use the segmentation masks to remove the outliers to obtain the final pointcloud.
+            </p>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <img src="static/images/overview_recon.jpg" alt="Reconstruction pipeline" width="100%" class="center-image"/>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="section is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Robot control</h2>
+          <div class="level-set has-text-justified">
+            <p>
+              Our proposed robot control pipeline for human-to-robot handover (modules from other works are in grey). We first perform hand-object detection to obtain bounding boxes. Hand-object segmentation masks and wrist poses are estimated on the image cropped around the hand. We combine the outputs from the preprocessing steps for stereo hand-object reconstruction to obtain pointcloud. Grasp estimation is performed on the reconstructed shape and transformed at each timestep using the wrist poses. The wrist pose in robot coordinate space is calculated using the world to robot base transform obtained using the hand-eye calibration process.
+            </p>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <img src="static/images/overview_robot_flip.jpg" alt="Robot pipeline" width="100%" class="center-image"/>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- Image carousel -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Hand-object reconstructions</h2>
+      <div class="level-set has-text-justified">
+        <p>
+          Comparison of single view and stereo hand object reconstructions on DexYCB. For the single-view setting, each reconstruction corresponds to the image on the same row. For the stereo setting, the same reconstruction is shown from two viewpoints. Our method yields less noisy reconstruction by introducing segmentation masks as input. In the stereo setting, our method improves both the hand and object reconstructions by combining the predictions from individual views.
+        </p>
+      </div>
+      <div id="results-carousel" class="carousel results-carousel is-centered">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/visual1as.jpg" alt="reconstruction results" class="center-image"/>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/visual1bs.jpg" alt="reconstruction results" class="center-image"/>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Comparison with previous work</h2>
+      <div class="level-set has-text-justified">
+        <p>
+          Our method allows the robot to perform grasping with 6-DoF, resulting in more natural handovers. In contrast, previous stereo RGB based work perform grasping with fixed rotations, forcing the human to adapt to the gripper pose by holding the object upright.
+        </p>
+      </div>
+      <div class="video-container">
+        <div class="video-item">
+        <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+          <source src="static/videos/comp_1a.mp4" type="video/mp4"></video>
+          <div class="description">Ours with 6-DoF grasping</div>
+        </div>
+        <div class="video-item">
+        <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+          <source src="static/videos/comp_1b.mp4" type="video/mp4"></video>
+          <div class="description">Previous work grasping with fixed rotation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>

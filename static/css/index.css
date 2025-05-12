@@ -144,6 +144,10 @@ body {
   width: 400px;
   height: auto;
 }
+.summary_video {
+  width: 720px;
+  height: auto;
+}
 .description {
   margin-top: 10px;
 }

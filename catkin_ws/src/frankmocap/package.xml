@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>frankmocap</name>
+    <version>0.1.0</version>
+    <description>Frankmocap.</description>
+
+    <maintainer email="debug@debug.com">debug</maintainer>
+
+    <license>BSD</license>
+    <url>https://github.com/</url>
+    <build_export_depend>message_generation</build_export_depend>
+    <exec_depend>message_runtime</exec_depend>
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <depend>rospy</depend>
+</package>

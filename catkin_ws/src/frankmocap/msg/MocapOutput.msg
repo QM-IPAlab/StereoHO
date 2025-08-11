@@ -1,0 +1,11 @@
+float32[] cropped_img_1
+float32[] cropped_img_2
+float32[] hand_pose_cam_1
+float32[] hand_pose_cam_2
+float32[] hand_pose_base
+int16[] hand_mask_1
+int16[] hand_mask_2
+float32[] bbox_cam_1
+float32[] bbox_cam_2
+float32[] obj_bbox_cam_1
+float32[] obj_bbox_cam_2

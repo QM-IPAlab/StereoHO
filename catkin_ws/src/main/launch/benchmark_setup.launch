@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- rviz -->
+	<!-- <node type="rviz" name="rviz" pkg="rviz"/> -->
+
+	<!-- camera -->
+	<include file="$(find corsmal_benchmark_s2)/launch/rs_cam1.launch"/>
+	<include file="$(find corsmal_benchmark_s2)/launch/rs_cam2.launch"/>
+	<include file="$(find corsmal_benchmark_s2)/launch/rs_cam3.launch"/>
+
+	<!-- estimate camera-robot calibration -->
+	<!-- <node pkg="corsmal_benchmark_s2" name="estimate_camera_robot_transformation" type="estimate_camera_robot_transformation.py" output="screen"/> -->
+
+	<!-- vision node -->
+	<!-- <node pkg="corsmal_benchmark_s2" name="baseline_cv" type="baseline_cv.py" output="screen"/> -->
+
+	<!-- robot drivers -->
+	<!-- <include file="$(find ur_modern_driver)/launch/ur5_bringup.launch">
+		<arg name="limited" value="true"/>
+		<arg name="robot_ip" value="ROBOTIP"/>
+		<arg name="reverse_port" value="REVERSE_PORT"/>
+	</include>
+	<include file="$(find ur5_moveit_config)/launch/ur5_moveit_planning_execution.launch">
+		<arg name="limited" value="true"/>
+	</include> -->
+
+	<!-- gripper drivers -->
+	<!-- <node pkg="robotiq_2f_gripper_control" name="Robotiq2FGripperRtuNode" type="Robotiq2FGripperRtuNode.py" output="screen" args="/dev/ttyUSB0"/> -->
+</launch>

@@ -1,0 +1,6 @@
+float32[] pc_h
+float32[] pc_o
+float32[] hand_pose_base
+---
+float32[] all_grasps
+float32[] all_scores

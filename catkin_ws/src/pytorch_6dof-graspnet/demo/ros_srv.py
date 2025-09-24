@@ -8,14 +8,10 @@ import pickle
 
 from moveit_msgs.msg import Grasp
 from graspnet.srv import EstimateGrasps, EstimateGraspsResponse
-
 from scipy.spatial.transform import Rotation as R
 
 # 6DOFGraspNet
 import grasp_estimator
-import mayavi.mlab as mlab
-from utils.visualization_utils import *
-import mayavi.mlab as mlab
 from utils import utils
 import argparse
 
@@ -163,7 +159,6 @@ class GraspEstimationRosNode:
         rospy.spin()
         
     def estimate_grasp(self, req):
-        drawDebug = False
         grasp = Grasp()
 
         # Read request
@@ -190,39 +185,12 @@ class GraspEstimationRosNode:
             response.all_scores = np.array([]).astype(np.float32)
             return response
             
-        if drawDebug:
-            pc_vis = np.concatenate([pc_o, pc_h], axis=0)
-            pc_colors = np.zeros((pc_vis.shape[0], 3), dtype=np.uint8)
-            pc_colors[:pc_o.shape[0]] = [255, 0, 0]
-            
-            mlab.figure(bgcolor=(1, 1, 1))
-            # Plot coordinate xyz
-            mlab.plot3d([0, 0.1], [0, 0], [0, 0], color=(1, 0, 0), tube_radius=0.001)
-            mlab.plot3d([0, 0], [0, 0.1], [0, 0], color=(0, 1, 0), tube_radius=0.001)
-            mlab.plot3d([0, 0], [0, 0], [0, 0.1], color=(0, 0, 1), tube_radius=0.001)
-            draw_scene(
-                pc_vis,
-                pc_color=pc_colors,
-                grasps=generated_grasps,
-                grasp_scores=generated_scores,
-            )
-            mlab.show()
 
         # Check if grasp is in collision with hand
         start_time = time.time()
         filtered_grasps, filtered_scores = getSafeGrasps(generated_grasps, generated_scores, pc_h)
         print("Filtered grasps: ", filtered_grasps.shape[0])
         print("Time for collision check: ", time.time()-start_time)
-
-        if drawDebug:
-            mlab.figure(bgcolor=(1, 1, 1))
-            draw_scene(
-                pc_vis,
-                pc_color=pc_colors,
-                grasps=filtered_grasps,
-                grasp_scores=filtered_scores,
-            )
-            mlab.show()
 
         response = EstimateGraspsResponse()
         response.all_grasps = filtered_grasps.reshape(-1).astype(np.float32)

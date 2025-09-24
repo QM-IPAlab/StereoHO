@@ -1,1 +1,0 @@
-/home/robot_tutorial/StereoHO/catkin_ws/devel/./cmake.lock 47

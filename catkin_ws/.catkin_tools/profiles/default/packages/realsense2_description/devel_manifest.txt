@@ -1,5 +1,0 @@
-realsense-ros/realsense2_description
-/home/robot_tutorial/StereoHO/catkin_ws/devel/.private/realsense2_description/cmake.lock /home/robot_tutorial/StereoHO/catkin_ws/devel/./cmake.lock
-/home/robot_tutorial/StereoHO/catkin_ws/devel/.private/realsense2_description/lib/pkgconfig/realsense2_description.pc /home/robot_tutorial/StereoHO/catkin_ws/devel/lib/pkgconfig/realsense2_description.pc
-/home/robot_tutorial/StereoHO/catkin_ws/devel/.private/realsense2_description/share/realsense2_description/cmake/realsense2_descriptionConfig-version.cmake /home/robot_tutorial/StereoHO/catkin_ws/devel/share/realsense2_description/cmake/realsense2_descriptionConfig-version.cmake
-/home/robot_tutorial/StereoHO/catkin_ws/devel/.private/realsense2_description/share/realsense2_description/cmake/realsense2_descriptionConfig.cmake /home/robot_tutorial/StereoHO/catkin_ws/devel/share/realsense2_description/cmake/realsense2_descriptionConfig.cmake

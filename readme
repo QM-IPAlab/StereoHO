@@ -1,1 +1,63 @@
+# Create conda environments for each module
+conda env create --file conda_envs/robot_py2.yml --name robot_py2
+conda env create --file conda_envs/6dofgraspnet.yml --name 6dofgraspnet
+conda env create --file conda_envs/frankmocap.yml --name frankmocap
+conda env create --file conda_envs/stereoho.yml --name stereoho
 
+# Follow instructions in checkpoints directory to download model checkpoints
+# 6dofgraspnet
+# stereoho
+
+
+# Build the catkin workspace
+cd catkin_ws
+catkin init
+catkin config --extend /opt/ros/melodic --cmake-args -DCMAKE_BUILD_TYPE=Release
+catkin build
+
+# Start ros core
+roscore
+
+# Start camera streaming
+cd catkin_ws
+source devel/setup.bash
+roslaunch main rs_cam.launch
+
+# Start image conversion node
+cd catkin_ws
+source devel/setup.bash
+rosrun main imgmsg_converter.py
+
+# Start visualisation node
+cd catkin_ws
+source devel/setup.bash
+conda activate robot_py2 
+rosrun main recording.py
+
+# Start grasp detection node
+cd catkin_ws
+source devel/setup.bash
+cd src/pytorch_6dof-graspnet
+conda activate 6dofgraspnet
+python -m demo.ros_srv
+
+# Start hand tracking node
+cd catkin_ws
+source devel/setup.bash
+cd src/frankmocap
+conda activate frankmocap
+python -m demo.ros_node
+
+# Start StereoHO recosntruction node
+cd catkin_ws
+source devel/setup.bash
+cd src/stereo_ho
+conda activate stereoho
+python -m demo.recon_node
+
+# Start robot control node
+cd catkin_ws
+source devel/setup.bash
+cd src/stereo_ho
+conda activate robot_py2
+python -m demo.robot_node --subject_id 99 --config_id 99

@@ -186,7 +186,7 @@ class HandObjectReconRosNode:
 
                 if not args.no_save:
                     if self.robot_mode == 'stop_recording':
-                        save_dir = os.path.join('/home/robot_tutorial/Downloads/HANDOVER_RAL', 'subject_{}'.format(self.subject), 'recordings', 'raw', 'config_{}'.format(self.config))
+                        save_dir = os.path.join('subject_{}'.format(self.subject), 'recordings', 'raw', 'config_{}'.format(self.config))
                         cam1_dir = os.path.join(save_dir, 'cam1', 'rgb')
                         cam2_dir = os.path.join(save_dir, 'cam2', 'rgb')
                         print("Handover time: {:.03f}s".format(float(self.handover_time)))

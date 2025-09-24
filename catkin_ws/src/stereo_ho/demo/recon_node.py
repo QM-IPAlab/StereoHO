@@ -142,8 +142,8 @@ class HandObjectReconRosNode:
         
         opt.vq_ckpt_h='saved_ckpt/vqvae_h.ckpt'
         opt.vq_ckpt_o='saved_ckpt/vqvae_h.ckpt'
-        opt.tf_ckpt='saved_ckpt/rand_tf'
-        opt.resnet2vq_ckpt = 'saved_ckpt/resnet2vq'
+        opt.tf_ckpt='saved_ckpt/rand_tf.ckpt'
+        opt.resnet2vq_ckpt = 'saved_ckpt/resnet2vq.ckpt'
         
         self.model_img2vq = ResNet2VQModelLightning.load_from_checkpoint(opt.resnet2vq_ckpt, opt=opt).cuda()
         self.model_img2vq.eval()
@@ -262,16 +262,6 @@ class HandObjectReconRosNode:
 
         return seg_img_vis, binary_mask, np.sum(seg_img == 1)
     
-    def process_hand_seg_EgoHOS(self, seg_img, cam, seg_img_vis=None, binary_mask=None):
-        hand_seg_path = '/home/robot_tutorial/vgn_ws/src/autosdf_j2/demo/pred_twohands/tmp{}.png'.format(cam)
-        hand_seg = cv2.imread(hand_seg_path, cv2.IMREAD_GRAYSCALE)
-        seg_img_vis[hand_seg == 1] = [0, 0, 255]
-        seg_img_vis[hand_seg == 2] = [255, 0, 0]
-        binary_mask[hand_seg == 1] = [1, 1, 1]
-        binary_mask[hand_seg == 2] = [1, 1, 1]
-
-        return seg_img_vis, binary_mask, np.sum(seg_img == 1)
-    
     def process_hand_seg_MaskRCNN(self, hand_seg, seg_img_vis=None, binary_mask=None):
         seg_img_vis[hand_seg == 255] = [0, 0, 255]
         ho_binary_mask = copy.deepcopy(binary_mask)
@@ -280,7 +270,6 @@ class HandObjectReconRosNode:
         hand_binary_mask[hand_seg == 255] = [1, 1, 1]
 
         return seg_img_vis, ho_binary_mask, hand_binary_mask, np.sum(hand_seg == 255)
-
 
     def run(self):
         save_mesh = False
@@ -402,10 +391,7 @@ class HandObjectReconRosNode:
                                 print("Reprojection error: ", reperr)
                                 cam1_proj2d = cam1_proj2d/2.0
                                 cam2_proj2d = cam2_proj2d/2.0
-                                # if point3d[2] < 0.4:
-                                #     print("Object on the table, starting reconstruction...")
-                                #     IOU_sum_best = 0.0
-                                #     continue
+
                                 object_point3d_base = np.matmul(self.target2base, np.array([point3d[0], point3d[1], point3d[2], 1.0]))
                                 if object_point3d_base[1] < 1.0:
                                     print("Handover started")
@@ -608,12 +594,11 @@ class HandObjectReconRosNode:
                             debug_img = np.concatenate([debug_img1, debug_img2], axis=0).astype(np.uint8)
 
                         if save_vis:
-                            shutil.copy('/home/robot_tutorial/vgn_ws/src/autosdf_j2/demo/{}.gif'.format(fn), '/home/robot_tutorial/vgn_ws/src/autosdf_j2/demo/test.gif')
-                            cv2.imwrite('/home/robot_tutorial/vgn_ws/src/autosdf_j2/demo/{}.jpg'.format(fn), debug_img)
+                            cv2.imwrite('{}.jpg'.format(fn), debug_img)
 
                         if save_mesh and (p3d_mesh is not None):
                             print("Saving mesh...")
-                            IO().save_mesh(p3d_mesh, '/home/robot_tutorial/vgn_ws/src/autosdf_j2/demo/{}.obj'.format(fn))
+                            IO().save_mesh(p3d_mesh, '{}.obj'.format(fn))
 
                     print("Publishing point clouds...")
                     print("Hand point cloud shape: ", pc_h_best.shape)

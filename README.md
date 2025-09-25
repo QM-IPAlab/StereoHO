@@ -1,9 +1,14 @@
-# Stereo Hand-Object Reconstruction for Human-to-Robot Handover
+<div align="center">
+<h2><center> Stereo Hand-Object Reconstruction for Human-to-Robot Handover </h2>
+
+<a href='https://arxiv.org/abs/2412.07487'><img src='https://img.shields.io/badge/ArXiv-2412.14803-red'></a> 
+<a href='https://qm-ipalab.github.io/StereoHO/'><img src='https://img.shields.io/badge/Project-Page-Blue'></a> 
+
+</div>
+
 This is the official repository for "Stereo Hand-Object Reconstruction for Human-to-Robot Handover". This repository contains code for the stereo hand-object reconstruction pipeline and UR5 robot control.
 
-[[arxiv](https://arxiv.org/abs/2412.07487)] [[webpage](https://qm-ipalab.github.io/StereoHO/)]
-
-# Installation
+## Installation
 This code was tested on Ubuntu 18.04 and ROS Melodic.
 ### Create conda environments for each module
 ```
@@ -29,7 +34,7 @@ Follow instructions in each module's repository to download model checkpoints
 Download checkpoints for StereoHO. Unzip and place in `catkin_ws/src/stereo_ho/saved_ckpt`
 * [StereoHO model checkpoints](https://drive.google.com/file/d/1uiKxVp2QV8JKkwBFdihFXQEjR9IjEhpc/view?usp=sharing)
 
-# Human-to-robot handover
+## Human-to-robot handover
 This code utilises 2 Intel realsense D435i cameras, UR5 robot arm and Robotic 2F-85 gripper.
 For each section open a new terminal and run the code from the StereoHO directory.
 
@@ -87,3 +92,6 @@ cd src/stereo_ho
 conda activate robot_py2
 python -m demo.robot_node --subject_id 99 --config_id 99
 ```
+
+## Acknowledgements
+This code is built on [AutoSDF](https://github.com/yccyenchicheng/AutoSDF), [pytorch_6dof-graspnet](https://github.com/jsll/pytorch_6dof-graspnet), [frankmocap](https://github.com/facebookresearch/frankmocap) and [FastSAM](https://github.com/CASIA-IVA-Lab/FastSAM).

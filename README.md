@@ -6,7 +6,7 @@
 
 </div>
 
-This is the official repository for "Stereo Hand-Object Reconstruction for Human-to-Robot Handover". This repository contains code for the stereo hand-object reconstruction pipeline and UR5 robot control.
+This is the official repository for "Stereo Hand-Object Reconstruction for Human-to-Robot Handover" published in RA-L 2025. This repository contains code for the stereo hand-object reconstruction pipeline and UR5 robot control.
 
 ## Installation
 This code was tested on Ubuntu 18.04 and ROS Melodic.
@@ -91,6 +91,17 @@ source devel/setup.bash
 cd src/stereo_ho
 conda activate robot_py2
 python -m demo.robot_node --subject_id 99 --config_id 99
+```
+
+## Citation
+```
+@article{pang2025stereo,
+  title={Stereo hand-object reconstruction for human-to-robot handover},
+  author={Pang, Yik Lung and Xompero, Alessio and Oh, Changjae and Cavallaro, Andrea},
+  journal={IEEE Robotics and Automation Letters},
+  year={2025},
+  publisher={IEEE}
+}
 ```
 
 ## Acknowledgements
